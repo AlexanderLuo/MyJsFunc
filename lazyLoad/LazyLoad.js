@@ -29,14 +29,11 @@
         id:false,
         lazyTime:0,
         lazyRange:100
-    }
+    };
 
 
     var isLoadable=function(ele,range){
         if(typeof ele==='undefined') return false;
-
-        console.log(range);
-        console.log(typeof (range))
         // pixel of scrollTop
         var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
         var clientHeight = scrollTop + document.documentElement.clientHeight + range;
@@ -46,7 +43,7 @@
             offsetTop += ele.offsetTop;
             ele = ele.offsetParent;
         }
-        console.log(clientHeight > offsetTop)
+        console.log(clientHeight > offsetTop);
         return (clientHeight > offsetTop);
 
     };
@@ -58,13 +55,13 @@
 
 
     var LazyLoad=function(conf){
+        var _this=this;
         conf=conf || defalutConf;
         this.id=conf.id || defalutConf.id;
         this.lazyTime=conf.lazyTime || defalutConf.lazyTime;
         this.lazyRange=conf.lazyRange || defalutConf.lazyRange;
         this.images=[];
         this.remain=[];
-        var _this=this;
 
         var doc=this.id ? document.getElementById(this.id) : document;
         if(doc !==null) {

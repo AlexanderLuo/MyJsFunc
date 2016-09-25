@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./FileTool.js"></script>
+<body>
+
+
+<input type="file"  multiple  id="total" />
+
+<input type="file"  multiple  id="chunk" />
+
+</body>
+<script>
+
+    var t=document.getElementById("total");
+    t.addEventListener('change',function(){
+
+        var a=new FileTool({
+            fileList: t.files,
+            method:"total",
+            readAs:"text",
+            onload:function(result){
+                console.log(result)
+            }
+        })
+        a.start();
+    })
+
+
+
+    var d=document.getElementById("chunk");
+    d.addEventListener('change',function(){
+
+        var a=new FileTool({
+            fileList: d.files,
+            method:"chunk",
+            readAs:"text",
+            onload:function(result){
+                console.log(result)
+            }
+        })
+        a.start();
+    })
+
+
+
+
+
+
+</script>
+
+</html>
