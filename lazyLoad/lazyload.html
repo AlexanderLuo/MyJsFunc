@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo-Lazyload</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<style>
+         img{height: 500px;width: 500px;display:block;background: url(http://1.lazyloading.sinaapp.com/Lazy/images/loading.gif) no-repeat center; margin: 0 auto}
+         #lazy{width: 800px;margin: 0 auto}
+</style>
+</head>
+<script src="LazyLoad.js"></script>
+
+<body>
+<div id="lazy">
+	<img data-src="./images/1.jpg"  src="./images/pixel.gif"/>
+	<img data-src="./images/2.jpg" 	src="./images/pixel.gif"/>
+	<img data-src="./images/3.jpg" 	src="./images/pixel.gif"/>
+	<img data-src="./images/4.jpg" 	src="./images/pixel.gif"/>
+	<img data-src="./images/5.png" 	src="./images/pixel.gif"/>
+	<img data-src="./images/6.jpg" 	src="./images/pixel.gif"/>
+	<img data-src="./images/7.png" 	src="./images/pixel.gif"/>
+</div>
+
+
+</body>
+<script>
+	var a=new  LazyLoad({id:"lazy"});
+	a.start()
+</script>
+</html>
