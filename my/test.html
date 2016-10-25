@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="./my.js"></script>
+
+<script>
+    var a={
+            editable:false,
+            beginTeacheryear:"",
+            beginTeachermoon:"1",
+            tempCollection:[],      //专业技术三个联动
+            province:"",
+            city:"",
+            county:"",
+            town:"",
+            school:"",
+
+        //字典
+            moonsDictionary:['1','2','3','4','5','6','7','8','9','10','11','12'],
+            qualificationLevelDictionary:[],
+
+        //Json树
+            formData:{
+                code:"3",
+                phone:"34",
+                email:"34",
+                teacherName:"43",
+                sex:1,
+                idcard:"",
+                birthday:"",
+                nativePlace:"",
+                homeArea:"",
+                areaName:"",
+                nation:"",
+                politicalOutlook:"",
+                marriage:"",
+                workTime:"",
+                jobCategory:"",
+                department:"",
+                administrativeDuties:"",
+                education:"",
+                educationOrganization:"",
+                degree:"",
+                degreeOrganization:"",
+                headImage:"",
+                headImageFileId:"",
+
+            //专业信息
+                majorInfo:{
+            professionalPost:"",
+                    technicalPosition:"",
+                    technicalQualification:"",
+                    appointBeginTime:"",
+                    appointEndTime:"",
+                    studyPeriod:"",
+                    subject:"",
+                    situation:"",
+                    beginTeacher:"",
+                    importantAwards:"",
+                    qualificationCertificate:"",
+                    doubleDivision:"",
+                    qualificationLevel:"",
+                    businessHours:"",
+                    qualification:""
+        },
+        //个人履历
+        experience:[{
+            id:"",
+            baseInfoCode:"",
+            content:"",
+            beginTime:"",
+            endTime:""
+        }
+        ],
+            //获奖
+                rewards:[{
+            id:"",
+            baseInfoCode:"",
+            apTime:"",
+            awardPunishment:"",
+            apReason:""
+        }
+        ]
+    }}
+
+    console.log(my.deepClone(a))
+    console.log(my.badClone(a),'11')
+
+
+</script>
+<body>
+
+
+
+</body>
+</html>

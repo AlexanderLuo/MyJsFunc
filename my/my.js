@@ -59,11 +59,9 @@
     my.ajax=function(conf){
         var xhr = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");
 
-
         var url=conf.url;
         var type=conf.type || "get";
         var data=conf.data || "";
-
 
         var enctype=conf.enctype ;
 
@@ -107,6 +105,29 @@
 
 
     };
+
+    my.badClone=function(obj){
+        return JSON.parse(JSON.stringify(obj));
+    }
+
+
+    my.deepClone=function(p,c){
+        var c = c || {};
+        for (var i in p) {
+            if(! p.hasOwnProperty(i)){
+                continue;
+            }
+            if (typeof p[i] === 'object') {
+                c[i] = (p[i].constructor === Array) ? [] : {};
+                my.deepClone(p[i], c[i]);
+            } else {
+                c[i] = p[i];
+            }
+        }
+        return c;
+    }
+
+
 
     return my;
 }));
